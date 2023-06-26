@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>끝말잇기</title>
+  </head>
+  <body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어:<span id="word"></span></div>
+    <input type="text" />
+    <button>입력</button>
+    <script>
+      /*대화상자
+      -prompt :값을 입력하는 대화상자, 자료형은 string이다. 따라서 숫자를 쓰고싶을땐 
+      -alert : 경고창
+      -confirm : yes or no로 확인하는 대화상자*/
+      const number = parseInt(prompt("몇 명이 참가하나요?"), 10);
+      console.log("number:", number);
+      alert(number);
+      const yesORno = confirm("확인이나 취소를 눌러보세요");
+      console.log(yesORno);
+    </script>
+  </body>
+</html>
