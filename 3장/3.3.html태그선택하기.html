@@ -9,7 +9,7 @@
     <div><span id="order">1</span>번째 참가자</div>
     <div>제시어:<span id="word"></span></div>
     <input type="text" />
-    <button></a>">입력</button>
+    <button>입력</button>
     <button class="a">버튼2</button>
     <button class="a">버튼3</button>
 
@@ -19,12 +19,12 @@
       console.log($input);
       const $$button = document.querySelectorAll("button"); //button태그를 모두 선택
       console.log($$button); //consol창에 나타나는 값들은 배열이아닌 객체 즉 유사배열이다.
-      const $buttons = document.querySelector("#order");//id로 선택하면 같은 태그들 속에서 원하는 태그만 선택가능하다. id는 고유한 값이다.
+      const $buttons = document.querySelector("#order"); //id로 선택하면 같은 태그들 속에서 원하는 태그만 선택가능하다. id는 고유한 값이다.
       console.log($buttons);
-      const $$buttons=document.querySelectorAll(".a")//button태그중 원하는 button태그를 여러개 선택할때는 클래스를 사용하면 된다. 단 여러개 선택해야하니 queryselectorAll을 써야한다.
-      console.log($$buttons)
-      const $div=document.querySelector('div span')//괄호안에 선택자를 선언하고 그안에 내부선택자를 선언함으로써 원하는 태그를 찾을 수 있다. 단 div와 span같이 자주 쓰이는 태그일 경우 원하지 않는 태그들이 같이 선택될 수 있으므로 id나class를 이용하는 것이 좋다.    
-      console.log($div)
+      const $$buttons = document.querySelectorAll(".a"); //button태그중 원하는 button태그를 여러개 선택할때는 클래스를 사용하면 된다. 단 여러개 선택해야하니 queryselectorAll을 써야한다.
+      console.log($$buttons);
+      const $div = document.querySelector("div span"); //괄호안에 선택자를 선언하고 그안에 내부선택자를 선언함으로써 원하는 태그를 찾을 수 있다. 단 div와 span같이 자주 쓰이는 태그일 경우 원하지 않는 태그들이 같이 선택될 수 있으므로 id나class를 이용하는 것이 좋다.
+      console.log($div);
     </script>
   </body>
 </html>
