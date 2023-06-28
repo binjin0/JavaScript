@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어:<span id="word"></span></div>
+    <input type="text" />
+    <button>입력</button>
+    <script>
+      /*
+      1. 이벤트가 발생할 때 실행할 함수 작성 ->여기서 만들어진 함수는 콜백함수
+      <콜백함수>
+      특정 작업이 실행되고 난 뒤에 추가로 실행되는 함수를 의미.
+      2. 선택함수(document.querySelctor)를 사용하여 html태그 선택
+      3. html태그들에 이벤트리스너 달기
+      */
+      const onClickButton = () => {
+        console.log("버튼 클릭");
+      };
+      const $button = document.querySelector("button");
+      $button.addEventListener("click", onClickButton); //버튼이 클릭된 후에 추가적으로 onClicButton이 실행됨.
+      //화살표 함수는 event즉 매개변수를 event.target.vlaue로 받는듯?
+      const onInput = (event) => {
+        //여기서 event라는 이름은 형식적인 것으로 아무 이름이나 사용해도 된다. 그냥 저 매개변수자리에 전달되는 인자를 가져올 수 있는 이름이기만 하면 상관없다.
+        console.log("글자입력", event.target.value); //event.target.value : even객체의 target객체의 value로 사용자가 입력한 값을 실시간으로 콘솔창에서 볼 수 있다.
+      };
+      const $input = document.querySelector("input");
+      $input.addEventListener("input", onInput);
+    </script>
+  </body>
+</html>
