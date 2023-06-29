@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어:<span id="word"></span></div>
+    <input type="text" />
+    <button>입력</button>
+    <script>
+      let num = Number(prompt("몇명이 참가하나요?"));
+      let word;
+      let newword;
+      const $input = document.querySelector("input");
+      const $buttons = document.querySelector("button");
+      const $word = document.querySelector("#word");
+      const onClickButton = () => {
+        if (!word) {
+          word = newword; //입력한 단어가 제시어가 된다., 데이터를 바꾼다.
+          $word.textContent = word; //데이터를 바꿨으니 화면도 바꿔준다..
+          /*태그.textContent : 태그내부의 문자열을 가져옴
+            태그.textContent : 태그 내부의 문자열을 해당 값으로 설정함     
+          */
+        } else {
+        }
+      };
+      const onInput = (event) => {
+        newword = event.target.value;
+      };
+      $buttons.addEventListener("click", onClickButton);
+      $input.addEventListener("input", onInput);
+    </script>
+  </body>
+</html>
