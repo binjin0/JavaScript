@@ -17,6 +17,7 @@
       const $input = document.querySelector("input");
       const $buttons = document.querySelector("button");
       const $word = document.querySelector("#word");
+      const $order = document.querySelector("#order");
       const onClickButton = () => {
         if (!word) {
           word = newword; //입력한 단어가 제시어가 된다., 데이터를 바꾼다.
@@ -24,7 +25,24 @@
           /*태그.textContent : 태그내부의 문자열을 가져옴
             태그.textContent : 태그 내부의 문자열을 해당 값으로 설정함     
           */
+          const order = Number($order.textContent);
+          if (order + 1 > num) {
+            $order.textContent = 1;
+          } else {
+            $order.textContent = order + 1;
+          }
         } else {
+          if (word[word.length - 1] === newword[0]) {
+            word = newword;
+            $word.textContent = wrod;
+            const order = Number($order.textContent);
+            if (order + 1 > num) {
+              $order.textContent = 1;
+            } else {
+              $order.textContent = order + 1;
+            }
+          } else {
+          }
         }
       };
       const onInput = (event) => {
