@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button>입력</button>
+    <div>세번째 글자 :<span id="third"> </span></div>
+    <div>제시어:<span id="word"></span></div>
+    <script>
+      let word;
+      const $input = document.querySelector("input");
+      const $button = document.querySelector("button");
+      const $word = document.querySelector("#word");
+      const $third = document.querySelector("#third");
+      const onClickButton = () => {
+        $word.textContent = word;
+        if (word.length >= 3) {
+          $third.textContent = word[word.length - 3];
+        } else {
+        }
+      };
+      const onInput = (event) => {
+        word = event.target.value;
+      };
+      $button.addEventListener("click", onClickButton);
+      $input.addEventListener("input", onInput);
+    </script>
+  </body>
+</html>
