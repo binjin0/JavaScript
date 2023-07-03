@@ -11,26 +11,28 @@
     <input type="text" />
     <button>입력</button>
     <script>
-      let num = Number(prompt("몇명이 참가하나요?"));
-      let word;
-      let newword;
-      const $input = document.querySelector("input");
+      const number = Number(prompt("몇명이 참가하나요?"));
       const $buttons = document.querySelector("button");
+      const $input = document.querySelector("input");
       const $word = document.querySelector("#word");
       const $order = document.querySelector("#order");
+      let word;
+      let newword;
       const onClickButton = () => {
         if (!word) {
           word = newword; //입력한 단어가 제시어가 된다., 데이터를 바꾼다.
-          $word.textContent = word; //데이터를 바꿨으니 화면도 바꿔준다..
+          $word.text5Content = word; //데이터를 바꿨으니 화면도 바꿔준다..
           /*태그.textContent : 태그내부의 문자열을 가져옴
             태그.textContent : 태그 내부의 문자열을 해당 값으로 설정함     
           */
           const order = Number($order.textContent);
-          if (order + 1 > num) {
+          if (order + 1 > number) {
             $order.textContent = 1;
           } else {
             $order.textContent = order + 1;
           }
+          $input.value = "";
+          $input.focus();
         } else {
           if (word[word.length - 1] === newword[0]) {
             word = newword;
@@ -41,7 +43,12 @@
             } else {
               $order.textContent = order + 1;
             }
+            $input.value = "";
+            $input.focus();
           } else {
+            alert("올바르지 않은 단어입니다.");
+            $input.value = "";
+            $input.focus();
           }
         }
       };
