@@ -7,38 +7,42 @@
   </head>
   <body>
     <div><span id="order">1</span>번째 참가자</div>
-    <div>제시어:<span id="word"></span></div>
+    <div>제시어: <span id="word"></span></div>
     <input type="text" />
     <button>입력</button>
     <script>
       const number = Number(prompt("몇명이 참가하나요?"));
-      const $buttons = document.querySelector("button");
+      const $button = document.querySelector("button");
       const $input = document.querySelector("input");
       const $word = document.querySelector("#word");
       const $order = document.querySelector("#order");
       let word;
-      let newword;
+      let newWord;
       const onClickButton = () => {
         if (!word) {
-          word = newword; //입력한 단어가 제시어가 된다., 데이터를 바꾼다.
-          $word.text5Content = word; //데이터를 바꿨으니 화면도 바꿔준다..
+          //제시어가 비었는가
+          word = newWord; //입력한 단어가 제시어가 된다., 데이터를 바꾼다.
+          $word.textContent = word; //데이터를 바꿨으니 화면도 바꿔준다..
           /*태그.textContent : 태그내부의 문자열을 가져옴
             태그.textContent : 태그 내부의 문자열을 해당 값으로 설정함     
           */
           const order = Number($order.textContent);
           if (order + 1 > number) {
-            $order.textContent = 1;
+            //현재 참가자 순번이 총 참가자수보다 크면
+            $order.textContent = 1; //첫번째 참가자고 돌아간다.
           } else {
-            $order.textContent = order + 1;
+            $order.textContent = order + 1; //아니면 다음 참가자로 넘어간다.
           }
-          $input.value = "";
+          $input.value = ""; //입력창 비워준다.
           $input.focus();
         } else {
-          if (word[word.length - 1] === newword[0]) {
-            word = newword;
-            $word.textContent = wrod;
+          //제시어가 비어있지 않는다면
+          if (word[word.length - 1] === newWord[0]) {
+            //끝말잇기가 올바른지 확인
+            word = newWord;
+            $word.textContent = word;
             const order = Number($order.textContent);
-            if (order + 1 > num) {
+            if (order + 1 > number) {
               $order.textContent = 1;
             } else {
               $order.textContent = order + 1;
@@ -53,9 +57,9 @@
         }
       };
       const onInput = (event) => {
-        newword = event.target.value;
+        newWord = event.target.value;
       };
-      $buttons.addEventListener("click", onClickButton);
+      $button.addEventListener("click", onClickButton);
       $input.addEventListener("input", onInput);
     </script>
   </body>
